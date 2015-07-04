@@ -91,8 +91,9 @@ function login(email, password){
   });
 }
 
-//user login handler
-
+function logout(){
+  ref.unauth();
+}
 
 //checks any changes in user authentication
 ref.onAuth(function(){
