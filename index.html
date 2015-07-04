@@ -1,9 +1,11 @@
 <html>
 <head>
 	<title>Hive by Aldio</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
 	<script type="text/javascript" src = "script.js" ></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
 
 </head>
@@ -20,7 +22,7 @@
 					Password:<br>
 					<input type="text" id = "password1" name="pass">
 					<br>
-					<input type="submit" onclick = "" value="Log In">
+					<input type="submit" onclick = "login(document.getElementById('username1').value.toString(), document.getElementById('password1').value.toString())" value="Log In">
 
 			</td>
 			<td id="signupform">
@@ -49,6 +51,11 @@
 			</td>
 		</tr>
 	</table>
+
+	<div>
+		<text id = "loginstatus">Login Status </text>
+		(red: logged out | green: logged in)
+	</div>
 
 	<ul id = "checkboxes">
 		<li>

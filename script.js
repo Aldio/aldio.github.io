@@ -1,4 +1,5 @@
 var ref = new Firebase('https://hiveio.firebaseio.com/');
+var connectedRef = new Firebase('https://hiveio.firebaseio.com/.info/connected');
 
 var user = replacePeriods('')
 
@@ -92,6 +93,30 @@ function replacePeriods(email){
     return email.replace(/\./g,'*')
 }
 
+function login(email, password){
+  ref.authWithPassword({
+    email    : email,
+    password : password
+  }, authHandler);
+}
+
+//user login handler
+function authHandler(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+}
+
+//checks any changes in user authentication
+ref.onAuth(function(){
+  if(ref.getAuth() == null){
+    $("#loginstatus").css("color", "red");
+  }else{
+    $("#loginstatus").css("color", "green");
+  }
+});
 
 // Debug code
 function deleteUser(email, password){
