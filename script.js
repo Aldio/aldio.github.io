@@ -1,7 +1,6 @@
 var ref = new Firebase('https://hiveio.firebaseio.com/');
-var connectedRef = new Firebase('https://hiveio.firebaseio.com/.info/connected');
 
-var user = replacePeriods('')
+var user = 'loggedOut'
 
 var portAvailability = [] //true means available , false means not available
 
@@ -45,20 +44,6 @@ function createUser(email, password){
     });
 }
 
-function loginUser(email, password){
-    ref.authWithPassword({
-        email    : email,
-        password : password
-    }, function(error, authData) {
-        if (error) {
-            console.log("Login Failed!", error);
-        } else {s
-            user = replacePeriods(email) 
-            console.log("Authenticated successfully with payload:", authData);
-        }
-    });
-}
-
 function changeAvailability(num){
     var value = ''
     if(portAvailability[num-1] == 'empty'){
@@ -97,17 +82,17 @@ function login(email, password){
   ref.authWithPassword({
     email    : email,
     password : password
-  }, authHandler);
+  }, function authHandler(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });
 }
 
 //user login handler
-function authHandler(error, authData) {
-  if (error) {
-    console.log("Login Failed!", error);
-  } else {
-    console.log("Authenticated successfully with payload:", authData);
-  }
-}
+
 
 //checks any changes in user authentication
 ref.onAuth(function(){
