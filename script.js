@@ -1,6 +1,6 @@
 var ref = new Firebase('https://hiveio.firebaseio.com/');
 
-var user = replacePeriods('rohan@techlabeducation.com')
+var user = replacePeriods('')
 
 var portAvailability = [] //true means available , false means not available
 
@@ -44,6 +44,20 @@ function createUser(email, password){
     });
 }
 
+function loginUser(email, password){
+    ref.authWithPassword({
+        email    : email,
+        password : password
+    }, function(error, authData) {
+        if (error) {
+            console.log("Login Failed!", error);
+        } else {s
+            user = replacePeriods(email) 
+            console.log("Authenticated successfully with payload:", authData);
+        }
+    });
+}
+
 function changeAvailability(num){
     var value = ''
     if(portAvailability[num-1] == 'empty'){
@@ -81,24 +95,24 @@ function replacePeriods(email){
 
 // Debug code
 function deleteUser(email, password){
-  ref.removeUser({
-    email: email,
-    password: password
-  }, function(error) {
-    if (error) {
-      switch (error.code) {
-        case "INVALID_USER":
-          console.log("The specified user account does not exist.");
-          break;
-        case "INVALID_PASSWORD":
-          console.log("The specified user account password is incorrect.");
-          break;
-        default:
-          console.log("Error removing user:", error);
-      }
-    } else {
-      ref.child("users").child(replacePeriods(email)).remove();
-      console.log("User account deleted successfully!");
-    }
-  });
+    ref.removeUser({
+        email: email,
+        password: password
+    }, function(error) {
+        if (error) {
+            switch (error.code) {
+                case "INVALID_USER":
+                    console.log("The specified user account does not exist.");
+                    break;
+                case "INVALID_PASSWORD":
+                    console.log("The specified user account password is incorrect.");
+                    break;
+                default:
+                    console.log("Error removing user:", error);
+            }
+        } else {
+            ref.child("users").child(replacePeriods(email)).remove();
+            console.log("User account deleted successfully!");
+        }
+    });
 }
