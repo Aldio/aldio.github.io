@@ -1,9 +1,11 @@
 <html>
 <head>
 	<title>Hive by Aldio</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
 	<script type="text/javascript" src = "script.js" ></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
 
 </head>
@@ -18,9 +20,9 @@
 					<input type="text" id = "username1" name="user">
 					<br>
 					Password:<br>
-					<input type="text" id = "password1" name="pass">
+					<input type="password" id = "password1" name="pass">
 					<br>
-					<input type="submit" onclick = "" value="Log In">
+					<input type="submit" onclick = "login(document.getElementById('username1').value.toString(), document.getElementById('password1').value.toString())" value="Log In">
 
 			</td>
 			<td id="signupform">
@@ -30,7 +32,7 @@
 					<input type="text" id = "username2" name="user">
 					<br>
 					Password:<br>
-					<input type="text" id = "password2" name="pass">
+					<input type="password" id = "password2" name="pass">
 					<br>
 					<input type="submit" onclick = "createUser(document.getElementById('username2').value.toString(), document.getElementById('password2').value.toString())" value="Sign Up">
 
@@ -42,13 +44,19 @@
 					<input type="text" id = "username3" name="user">
 					<br>
 					Password:<br>
-					<input type="text" id = "password3" name="pass">
+					<input type="password" id = "password3" name="pass">
 					<br>
 					<input type="submit" onclick = "deleteUser(document.getElementById('username3').value.toString(), document.getElementById('password3').value.toString())" value="Delete">
 
 			</td>
 		</tr>
 	</table>
+
+	<div>
+		<text id = "loginstatus">Login Status </text>
+		(red: logged out | green: logged in)
+		<input type="submit" onclick = "logout()" value="Log Out">
+	</div>
 
 	<ul id = "checkboxes">
 		<li>

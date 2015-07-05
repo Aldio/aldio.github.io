@@ -1,10 +1,11 @@
 var ref = new Firebase('https://hiveio.firebaseio.com/');
 
-var user = replacePeriods('')
+var user = 'loggedOut'
 
 var portAvailability = [] //true means available , false means not available
 
 getPortAvailability()
+//createUser('rohan@techlabeducation.com', 'jenga') //this should be called from html when a button is pressed or something
 
 function createUser(email, password){
     var newEmail = replacePeriods(email)
@@ -43,20 +44,6 @@ function createUser(email, password){
     });
 }
 
-function loginUser(email, password){
-    ref.authWithPassword({
-        email    : email,
-        password : password
-    }, function(error, authData) {
-        if (error) {
-            console.log("Login Failed!", error);
-        } else {s
-        user = replacePeriods(email) 
-        console.log("Authenticated successfully with payload:", authData);
-               }
-    });
-}
-
 function changeAvailability(num){
     var value = ''
     if(portAvailability[num-1] == 'empty'){
@@ -73,18 +60,17 @@ function changeAvailability(num){
 }
 
 function getPortAvailability(){
-    if(user != ''){
-        ref.child('users').child(user).child('ports').on("value", function(snapshot) {
-            var index = 0
-            snapshot.forEach(function(childSnapshot){
-                //console.log(childSnapshot.child('type').val())
-                portAvailability[index] = childSnapshot.child('type').val()
+
+    ref.child('users').child(user).child('ports').on("value", function(snapshot) {
+        var index = 0
+        snapshot.forEach(function(childSnapshot){
+            //console.log(childSnapshot.child('type').val())
+            portAvailability[index] = childSnapshot.child('type').val()
 
 
-                index++
-            })
-        });
-    }
+            index++
+        })
+    });
 
 }
 
@@ -92,6 +78,32 @@ function replacePeriods(email){
     return email.replace(/\./g,'*')
 }
 
+function login(email, password){
+  ref.authWithPassword({
+    email    : email,
+    password : password
+  }, function authHandler(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+      user = replacePeriods(email)
+    }
+  });
+}
+
+function logout(){
+  ref.unauth();
+}
+
+//checks any changes in user authentication
+ref.onAuth(function(){
+  if(ref.getAuth() == null){
+    $("#loginstatus").css("color", "red");
+  }else{
+    $("#loginstatus").css("color", "green");
+  }
+});
 
 // Debug code
 function deleteUser(email, password){
