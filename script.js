@@ -87,6 +87,7 @@ function login(email, password){
       console.log("Login Failed!", error);
     } else {
       console.log("Authenticated successfully with payload:", authData);
+      user = replacePeriods(email)
     }
   });
 }
