@@ -79,30 +79,31 @@ function replacePeriods(email){
 }
 
 function login(email, password){
-  ref.authWithPassword({
-    email    : email,
-    password : password
-  }, function authHandler(error, authData) {
-    if (error) {
-      console.log("Login Failed!", error);
-    } else {
-      console.log("Authenticated successfully with payload:", authData);
-      user = replacePeriods(email)
-    }
-  });
+    ref.authWithPassword({
+        email    : email,
+        password : password
+    }, function authHandler(error, authData) {
+        if (error) {
+            console.log("Login Failed!", error);
+        } else {
+            console.log("Authenticated successfully with payload:", authData);
+            user = replacePeriods(email)
+        }
+    });
 }
 
 function logout(){
-  ref.unauth();
+    ref.unauth();
+    user = 'loggedOut'
 }
 
 //checks any changes in user authentication
 ref.onAuth(function(){
-  if(ref.getAuth() == null){
-    $("#loginstatus").css("color", "red");
-  }else{
-    $("#loginstatus").css("color", "green");
-  }
+    if(ref.getAuth() == null){
+        $("#loginstatus").css("color", "red");
+    }else{
+        $("#loginstatus").css("color", "green");
+    }
 });
 
 // Debug code
