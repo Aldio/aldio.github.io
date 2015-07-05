@@ -5,7 +5,6 @@ var user = replacePeriods('')
 var portAvailability = [] //true means available , false means not available
 
 getPortAvailability()
-//createUser('rohan@techlabeducation.com', 'jenga') //this should be called from html when a button is pressed or something
 
 function createUser(email, password){
     var newEmail = replacePeriods(email)
@@ -52,9 +51,9 @@ function loginUser(email, password){
         if (error) {
             console.log("Login Failed!", error);
         } else {s
-            user = replacePeriods(email) 
-            console.log("Authenticated successfully with payload:", authData);
-        }
+        user = replacePeriods(email) 
+        console.log("Authenticated successfully with payload:", authData);
+               }
     });
 }
 
@@ -74,17 +73,18 @@ function changeAvailability(num){
 }
 
 function getPortAvailability(){
+    if(user != ''){
+        ref.child('users').child(user).child('ports').on("value", function(snapshot) {
+            var index = 0
+            snapshot.forEach(function(childSnapshot){
+                //console.log(childSnapshot.child('type').val())
+                portAvailability[index] = childSnapshot.child('type').val()
 
-    ref.child('users').child(user).child('ports').on("value", function(snapshot) {
-        var index = 0
-        snapshot.forEach(function(childSnapshot){
-            //console.log(childSnapshot.child('type').val())
-            portAvailability[index] = childSnapshot.child('type').val()
 
-
-            index++
-        })
-    });
+                index++
+            })
+        });
+    }
 
 }
 
