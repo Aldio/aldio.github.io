@@ -1,11 +1,23 @@
 var ref = new Firebase('https://hiveio.firebaseio.com/');
 
 var user = 'loggedOut'
+var token = localStorage.getItem('token');
+if(token == null){
+  token = "No Token"
+}
 
 var portAvailability = [] //true means available , false means not available
 
 getPortAvailability()
 //createUser('rohan@techlabeducation.com', 'jenga') //this should be called from html when a button is pressed or something
+
+ref.authWithCustomToken(token, function(error, result) {
+  if (error) {
+    console.log("No pre-existing token found");
+  } else {
+    console.log("Pre-existing token found");
+  }
+});
 
 function createUser(email, password){
     var newEmail = replacePeriods(email)
@@ -87,6 +99,8 @@ function login(email, password){
             console.log("Login Failed!", error);
         } else {
             console.log("Authenticated successfully with payload:", authData);
+            token = authData.token;
+            localStorage.setItem('token', token);
             user = replacePeriods(email)
         }
     });
@@ -94,6 +108,7 @@ function login(email, password){
 
 function logout(){
     ref.unauth();
+    localStorage.removeItem('token');
     user = 'loggedOut'
 }
 
@@ -105,6 +120,9 @@ ref.onAuth(function(){
         $("#loginstatus").css("color", "green");
     }
 });
+
+// authentication
+
 
 // Debug code
 function deleteUser(email, password){
