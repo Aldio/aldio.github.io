@@ -121,9 +121,6 @@ ref.onAuth(function(){
     }
 });
 
-// authentication
-
-
 // Debug code
 function deleteUser(email, password){
     ref.removeUser({

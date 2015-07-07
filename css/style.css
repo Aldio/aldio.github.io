@@ -1,3 +1,17 @@
 #loginstatus {
   color: red;
 }
+.accountsections{
+  margin-top: 58px;
+}
+
+.navbar{
+  z-index: 1
+}
+.nav li {
+  margin-right: 40px;
+}
+
+.dropdown ul li {
+  margin-right: 0px
+}
