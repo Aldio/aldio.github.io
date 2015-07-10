@@ -44,8 +44,8 @@ nav a:hover {
 /*first section*/
 .container {
   width:100%;
-  height:100%;
-  background-image: url("https://mynokiablog.files.wordpress.com/2010/10/17102010183.jpg");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
+}
+
+.intro .container .introimg{
+  width: 100%;
 }
