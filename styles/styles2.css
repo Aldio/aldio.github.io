@@ -1,31 +1,28 @@
 .container{
-
+  width: 70%;
+  height: 100%;
+  background-color: #15242e;
 }
 
-.Port1 {
-  position: relative;
-  width: 300px;
-  height: 173.21px;
-  background-color: #64C7CC;
-  margin: 86.60px 0;
-}
+#hex {padding:0; margin:0 auto; list-style:none; width:325px;}
+#hex li {display:block; float:left; width:104px; margin-right:4px;  height:120px;}
+#hex li.p1 {padding-left:54px;}
+#hex li.p2 {margin-top:-26px;}
+#hex li a {text-decoration:none; color:#000; cursor:pointer;}
+#hex li a b {display:block; width:0; height:0; overflow:hidden; border-bottom:30px solid #fff; border-left:52px dotted transparent; border-right:52px dotted transparent;}
+#hex li a span {display:block; width:104px; height:60px; line-height:59px; text-align:center; background:#fff; font-size:14px; font-family:'latomedium', arial, veradana, sans-serif;}
+#hex li a em {display:block; width:0; height:0; overflow:hidden; border-top:30px solid #fff; border-left:52px dotted transparent; border-right:52px dotted transparent;}
+* html #hex li a b, * html #hex li a em {width:104px; height:30px;}
 
-.Port1:before,
-.Port1:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-}
+#hex li a.inner b {border-bottom-color:#fff;}
+#hex li a.inner span {background:#fff;}
+#hex li a.inner em {border-top-color:#fff;}
 
-.Port1:before {
-  bottom: 100%;
-  border-bottom: 86.60px solid #64C7CC;
-}
+#hex li a:hover {white-space:normal; color:#fff;}
+#hex li a:hover b {border-bottom-color:#fff;}
+#hex li a:hover span {background:#fff;}
+#hex li a:hover em {border-top-color:#fff;}
 
-.Port1:after {
-  top: 100%;
-  width: 0;
-  border-top: 86.60px solid #64C7CC;
-}
+#hex li a.inner:hover b {border-bottom-color:#a40;}
+#hex li a.inner:hover span {background:#a40;}
+#hex li a.inner:hover em {border-top-color:#a40;}
