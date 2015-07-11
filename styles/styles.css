@@ -69,7 +69,13 @@ nav a:hover {
   height: 400px;
   width: 100%;
 }
-
+.welcomeHeader #introText{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 4em;
+  text-align: center;
+  color: #fff;
+}
 
 
 
@@ -93,7 +99,7 @@ nav a:hover {
   height: 400px;
   width: 100%;
   background-color: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  box-shadow: 0 1px 10px rgba(0,0,0,.4);
   border-radius: 3px;
 }
 .ports th:first-child{
