@@ -48,16 +48,48 @@ nav a:hover {
 /*first section*/
 .intro{
   width:100%;
-  height: 100%;
+  height: contain;
 }
 
 .intro .container {
-  width:70%;
-  height: 100%;
+  width:100%;
+  height: 93.7%;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("https://mynokiablog.files.wordpress.com/2010/10/17102010183.jpg");
+  background-image: url("https://www.firebase.com/resources/images/website/backgrounds/krisskross_v2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 1px;
+  margin-top: 0px;
+}
+/*dashboard.html css only*/
+.portsbar{
+  background-color: #EEEEEE;
+  height: 380px;
+
+}
+.portsbar .ports {
+  width: 100%;
+  height: 370px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25%;
+  padding-top: 10px;
+}
+
+.portsbar .ports tr th{
+  margin-left: 100px;
+  margin-right: 100px;
+  align-content: center;
+}
+
+.port1, .port2, .port3, .port4, .port5, .port6 {
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2)
 }
