@@ -1,3 +1,6 @@
+body{
+  margin: 0;
+}
 .container{
   width: 70%;
   height: 100%;
@@ -18,11 +21,11 @@
 #hex li a.inner span {background:#fff;}
 #hex li a.inner em {border-top-color:#fff;}
 
-#hex li a:hover {white-space:normal; color:#fff;}
+#hex li a:hover {white-space:normal; color:#000;}
 #hex li a:hover b {border-bottom-color:#fff;}
 #hex li a:hover span {background:#fff;}
 #hex li a:hover em {border-top-color:#fff;}
 
-#hex li a.inner:hover b {border-bottom-color:#a40;}
-#hex li a.inner:hover span {background:#a40;}
-#hex li a.inner:hover em {border-top-color:#a40;}
+#hex li a.inner:hover b {border-bottom-color:#fff;}
+#hex li a.inner:hover span {background:#fff;}
+#hex li a.inner:hover em {border-top-color:#fff;}
