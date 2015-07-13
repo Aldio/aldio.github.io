@@ -25,6 +25,11 @@ body{
   background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #CBEAFB), color-stop(90, #FFFFFF));
   content: '';
 }
+.hexagon:hover:before {
+  background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #000000), color-stop(90, #FFFFFF));
+  content: '';
+}
+
 .container{
   margin: 0;
   padding: -1;
