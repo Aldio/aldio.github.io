@@ -14,13 +14,15 @@ body{
 .hexagon {
     position: absolute;
     overflow: hidden;
-    visibility: hidden;
+    visibility: visible;
     -webkit-transform: rotate(150deg);
        -moz-transform: rotate(150deg);
         -ms-transform: rotate(150deg);
          -o-transform: rotate(150deg);
             transform: rotate(150deg);
     cursor: pointer;
+    width: 400px;
+    height: 200px;
 }
 .hexagon-middle {
     position: absolute;
@@ -34,6 +36,7 @@ body{
             transform: rotate(-60deg);
 }
 .hexagon-inner {
+  background-image: url(http://www.zenefits.com/static/marketing/img/carriers/img.jpg);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -51,7 +54,14 @@ body{
 }
 
 .hexagon1 {
-    width: 400px;
-    height: 200px;
-    margin: 20px 0 0 -80px;
+  top: 2em;
+  left: 5em;
+}
+.hexagon2 {
+  top: 2em;
+  left: 18em;
+}
+.hexagon3 {
+  top: 13.3em;
+  left: -1.5em;
 }
