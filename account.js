@@ -144,7 +144,3 @@ function deleteUser(email, password){
         }
     });
 }
-
-$( window ).resize(function() {
-  $( ".container" ).load( "index.html" );
-});

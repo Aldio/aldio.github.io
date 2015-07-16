@@ -19,7 +19,7 @@ a:hover {
 .container {
 	width:90vmin;
 	height:60vmin;
-	margin-left: auto;
+	margin-left: 5%;
 	margin-right: auto;
 	margin-top: 10vmin;
 }
@@ -171,3 +171,10 @@ a:hover {
 	.hex.hex-3 {
 		background: #80b971;
 	}
+
+
+/*icons*/
+#motoricon{
+	margin-top: 3.3vmin;
+	width: 6.5vmin;
+}
