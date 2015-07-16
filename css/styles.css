@@ -17,12 +17,11 @@ a:hover {
 }
 
 .container {
-	width:110.83vmin;
-	height:100%;
-	position:absolute;
-	top:50px;
-	left:50%;
-	margin-left:-350px;
+	width:90vmin;
+	height:60vmin;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10vmin;
 }
 
 
