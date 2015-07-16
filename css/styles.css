@@ -114,11 +114,11 @@ a:hover {
 
 
 	.hex .corner-1:before {
-		-webkit-transform: rotate(-60deg) translate(-87px, 0px);
-		-moz-transform: rotate(-60deg) translate(-87px, 0px);
-		-ms-transform: rotate(-60deg) translate(-87px, 0px);
-		-o-transform: rotate(-60deg) translate(-87px, 0px);
-		transform: rotate(-60deg) translate(-87px, 0px);
+		-webkit-transform: rotate(-60deg) translate(-13.775vmin, 0vmin);
+		-moz-transform: rotate(-60deg) translate(-13.775vmin, 0vmin);
+		-ms-transform: rotate(-60deg) translate(-13.775vmin, 0vmin);
+		-o-transform: rotate(-60deg) translate(-13.775vmin, 0vmin);
+		transform: rotate(-60deg) translate(-13.775vmin, 0vmin);
 	  -webkit-transform-origin: 0 0;
 	  -moz-transform-origin: 0 0;
 	  -ms-transform-origin: 0 0;
@@ -127,11 +127,11 @@ a:hover {
 	}
 
 	.hex .corner-2:before {
-		-webkit-transform: rotate(60deg) translate(-48px, -11px);
-		-moz-transform: rotate(60deg) translate(-48px, -11px);
-		-ms-transform: rotate(60deg) translate(-48px, -11px);
-		-o-transform: rotate(60deg) translate(-48px, -11px);
-		transform: rotate(60deg) translate(-48px, -11px);
+		-webkit-transform: rotate(60deg) translate(-7.6vmin, -1.7416vmin);
+		-moz-transform: rotate(60deg) translate(-7.6vmin, -1.7416vmin);
+		-ms-transform: rotate(60deg) translate(-7.6vmin, -1.7416vmin);
+		-o-transform: rotate(60deg) translate(-7.6vmin, -1.7416vmin);
+		transform: rotate(60deg) translate(-7.6vmin, -1.7416vmin);
 		bottom:0;
 	}
 
